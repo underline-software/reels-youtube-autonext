@@ -1,5 +1,6 @@
 const ClickManager = {
     //Debes salir del primer video y pegar este objeto en la consola y darle enter. Luego debes iniciar con ClickManager.start, eso hará que cambie cada 15 a 20 segundos.
+    intervalTime: 20000
     intervalID: null,
     start: function() {
         const clickButton = () => {
@@ -10,7 +11,7 @@ const ClickManager = {
                 console.error("No se pudo clicar el botón:", error);
             }
         };
-        this.intervalID = setInterval(clickButton, 20000);
+        this.intervalID = setInterval(clickButton, this.intervalTime);
         console.log("Ejecución iniciada.");
     },
     stop: function() {
